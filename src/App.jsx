@@ -1,8 +1,15 @@
+import NewGame from "./components/NewGame"
+
 function App() {
+
+  const gameLevelHandler = (level) => {
+    console.log(level);
+  }
 
   return (
     <>
-      app here
+      <h1>New speed game</h1>
+      <NewGame onclick={gameLevelHandler} />
     </>
   )
 }
