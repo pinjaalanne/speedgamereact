@@ -2,11 +2,16 @@ import { useState } from "react"
 import NewGame from "./components/NewGame"
 import { levels } from "./levels"
 import Game from "./components/Game"
+import GameOver from "./components/GameOver"
 
+// have a condition by default show NewGame, after getting data for game, hide NewGame, display Game
 function App() {
   const [player, setPlayer] = useState()
   const [circles, setCircles] = useState([])
-  const [score, setSCore] = useState(0)
+  const [score, setScore] = useState(0)
+  const [game, setGame] = useState(true)
+  const [gameStart, setGameStart] = useState(false)
+  const [gameOver, setGameOver] = useState(false)
 
   const gameLevelHandler = (playerLevel, playerName) => {
     // based on level,
@@ -27,15 +32,23 @@ function App() {
         playerName: playerName
       }
     )
+    setGame(!game)
+    setGameStart(!gameStart)
+  }
+
+  const endGameHandler = () => {
+    setGameStart(!gameStart)
+    setGameOver(!gameOver)
   }
 
   return (
     <>
       <h1>New speed game</h1>
-      <NewGame click={gameLevelHandler} />
-      <Game score={score} circles={circles} />
+      {game && <NewGame click={gameLevelHandler} />}
+      {gameStart && <Game score={score} circles={circles} endGameHandler={endGameHandler} />}
+      {gameOver && <GameOver />}
     </>
-  )
+  );
 }
 
 export default App
