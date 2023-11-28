@@ -80,11 +80,12 @@ img.visible {
 .clowncircle {
   justify-content: center;
   align-items: center;
-  background: rgb(0, 0, 0);
-  height: 50px;
-  width: 50px;
+  background: rgb(255, 252, 252);
+  color: black;
+  height: 100px;
+  width: 100px;
   border-radius: 45%;
-  margin: 150px 100px 150px;
+  margin: 50px 50px 50px;
   pointer-events: none;
   cursor: url(knife_100x100.png), pointer;
 }
