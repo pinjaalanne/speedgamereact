@@ -1,12 +1,21 @@
 import Circle from "../UI_components/Circle";
 
-function Game({ score, circles, endGameHandler }) {
+function Game({ score, circles, clickHandler, endGameHandler, current }) {
 
     return (
         <>
-            <p>Score: {score}</p>
-            <div>{circles.map((el, i) => <Circle key={i} />)}</div>
-            <button onClick={endGameHandler}>End Game</button>
+            <div className="wrap">
+                <h3>Score: {score}</h3>
+                <div>
+                    {circles.map((_, i) =>
+                        <Circle
+                            key={i}
+                            id={i}
+                            clickHandler={clickHandler}
+                            current={current === i} />)}
+                </div>
+                <button className="btn" onClick={endGameHandler}>End Game</button>
+            </div>
         </>
     );
 }

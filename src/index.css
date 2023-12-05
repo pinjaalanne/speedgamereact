@@ -3,9 +3,6 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -19,78 +16,89 @@
 }
 
 body {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(155, 111, 148);
   color: white;
   text-align: center;
-  font-family: 'Creepster', cursive;
+  min-height: 100vh;
+}
+
+main {
+  min-height: calc(100vh - 200px);
 }
 
 h1 {
-  margin: 60px 0 15px;
   font-size: 5rem;
-  text-shadow: 4px 4px 2px rgba(195, 54, 54, 0.87);
+  text-shadow: 4px 4px 2px rgba(116, 54, 112, 0.86);
 }
 
 h2 {
   font-size: 2.5rem;
-  margin: 30px 0;
-  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.873);
+  text-shadow: 3px 3px 2px rgba(116, 54, 112, 0.86);
 }
 
-a {
+h3 {
+  margin: 2rem;
+}
+
+.wrap {
+  margin: 8rem 0 2rem;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainclown {
+  height: 250px;
+}
+
+/* a {
   text-decoration: none;
   color: rgb(46, 40, 40);
   font-size: 0.7rem;
   margin-top: 0;
-}
+} */
 
-img {
+/* img {
   border-radius: 20px;
   margin: 30px 0;
 }
 
 img.visible {
   display: none;
-}
+} */
 
-#score {
-  display: none;
-  margin: 30px 0;
-  color: white;
-  font-size: 1.7rem;
-  text-shadow: 3px 3px 1px rgba(162, 27, 27, 0.881);
-}
-
-#score.visible {
+/* #score.visible {
   display: inline-block;
-}
+} */
 
-.clown-container {
-  display: none;
+/* 
+.clown-container.visible {
+  display: flex;
+} */
+
+.circle {
+  display: inline-block;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-
-.clown-container.visible {
-  display: flex;
-}
-
-.clowncircle {
-  justify-content: center;
-  align-items: center;
-  background: rgb(255, 252, 252);
   color: black;
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
+  padding: 0.5rem;
   border-radius: 45%;
-  margin: 50px 50px 50px;
-  pointer-events: none;
+  margin: 20px 20px 20px;
+  /* pointer-events: none; */
   cursor: url(knife_100x100.png), pointer;
 }
 
-.clowncircle.number {
+.active {
+  /* background: rgb(109, 69, 116); */
+  background-image: url('./assets/clown1.png');
+  background-size: cover;
+}
+
+/* .clowncircle.number {
   background-image: url(close.webp);
   background-size: cover;
   box-shadow: inset 0px 0px 10px 10px rgb(0, 0, 0);
@@ -103,27 +111,48 @@ img.visible {
   box-shadow: none;
   border-radius: 10px;
   transition: none;
+} */
+
+.nameInput {
+  font-family: inherit;
+  color: rgb(107, 72, 120);
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  width: 200px;
+}
+
+::placeholder {
+  color: rgb(150, 110, 164);
+  font-weight: 500;
 }
 
 .btn {
-  background-color: rgb(155, 11, 11);
-  color: white;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.873);
-  box-shadow: inset 5px 5px 10px rgba(158, 113, 113, 0.893), 3px 3px 3px rgba(116, 54, 54, 0.86);
-  cursor: pointer;
-  border-style: none;
   font-family: inherit;
-  font-size: 2rem;
-  border-radius: 15px;
-  margin: 10px 20px 20px;
-  padding: 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: rgb(225, 201, 223);
+  color: rgb(95, 54, 97);
+  box-shadow: 2px 2px 2px 0.5px rgba(116, 54, 112, 0.86);
+  margin: 2rem 1rem;
+  padding: 7px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .btn:hover {
-  background-color: rgb(155, 11, 11, 0.5);
+  background-color: rgba(199, 150, 194, 0.866);
 }
 
-#stop {
+.closeBtn {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.3rem;
+}
+
+/* stop {
   display: none;
 }
 
@@ -133,19 +162,6 @@ img.visible {
 
 #play.notvisible {
   display: none;
-}
-
-#xButton,
-#closeButton {
-  background-color: white;
-  color: black;
-  text-shadow: 1px 1px 2.5px rgba(122, 10, 10, 0.873);
-  box-shadow: inset 2px 2px 2px rgba(75, 14, 14, 0.893), 3px 3px 2px rgba(30, 4, 4, 0.86);
-  padding: 0.3rem;
-  position: absolute;
-  top: 0.3rem;
-  right: 0.3rem;
-  border-radius: 10px;
 }
 
 #xButton:hover,
@@ -159,7 +175,7 @@ img.visible {
 
 #instButton:hover {
   background: rgba(107, 9, 9, 0.705);
-}
+} */
 
 .modal {
   background-color: rgba(0, 0, 0, 0.739);
@@ -168,7 +184,7 @@ img.visible {
   left: 0;
   height: 100vh;
   width: 100vw;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -178,17 +194,17 @@ img.visible {
 }
 
 .modalcontent {
-  background-color: rgb(130, 12, 12);
+  background-color: rgb(165, 118, 157);
   color: white;
-  box-shadow: inset 5px 5px 10px rgba(144, 77, 77, 0.893), 5px 5px 3px rgba(95, 31, 31, 0.86);
+  box-shadow: 2px 2px 2px 0.5px rgba(116, 54, 112, 0.745);
   margin: 3rem;
   padding: 5rem;
-  border-radius: 40px;
+  border-radius: 8px;
   max-width: 700px;
   position: relative;
 }
 
-#modaltext {
+/* #modaltext {
   font-size: 1.5rem;
   text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.873);
 }
@@ -244,4 +260,4 @@ ul li {
   font-size: 1.5rem;
   list-style-type: none;
   line-height: 3rem;
-}
+} */

@@ -1,7 +1,9 @@
-function Circle() {
+function Circle({ clickHandler, id, current }) {
     return (
         <>
-            <div className="clowncircle">circle</div>
+            <div className={`circle ${current ? 'active' : ''}`}
+                onClick={() => { clickHandler(id) }}>
+            </div>
         </>
     );
 }
