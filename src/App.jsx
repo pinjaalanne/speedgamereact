@@ -14,10 +14,11 @@ function App() {
   const [game, setGame] = useState(true)
   const [gameStart, setGameStart] = useState(false)
   const [gameOver, setGameOver] = useState(false)
-  const [current, setCurrent] = useState(0)
+  const [current, setCurrent] = useState(-1)
+  const [clicked, setClicked] = useState(false)
 
   const timeoutIdRef = useRef(null)
-  const rounds = useRef(0)
+  const rounds = useRef(0);
   const currentInst = useRef(0);
 
   let pace = 1000;
@@ -41,7 +42,7 @@ function App() {
       }
     )
 
-    rounds.current--;
+    rounds.current = 0;
 
     setGame((prevState) => !prevState) // more secure way to check what state is currently aand change it
     setGameStart((prevState) => !prevState)
@@ -63,19 +64,22 @@ function App() {
 
   const clickHandler = (id) => {
     if (current !== id) {
-      endGameHandler();
-      return;
+      endGameHandler()
+      return
     }
-    setScore(score + 15);
+    setClicked(true);
+    setScore(score + 1);
     rounds.current--;
   }
 
   const randomNumb = () => {
     if (rounds.current >= 3) {
-      endGameHandler();
+      endGameHandler()
       return;
     }
+
     let nextActiveCircle;
+
     do {
       nextActiveCircle = getRandomI(0, circleQty)
     } while (nextActiveCircle === currentInst.current);
@@ -83,6 +87,7 @@ function App() {
     setCurrent(nextActiveCircle)
     currentInst.current = nextActiveCircle;
     rounds.current++
+    console.log(rounds);
     timeoutIdRef.current = setTimeout(randomNumb, pace)
     pace *= 0.95
   }
@@ -95,7 +100,8 @@ function App() {
         circles={circles}
         clickHandler={clickHandler}
         endGameHandler={endGameHandler}
-        current={current} />}
+        current={current}
+        clicked={clicked} />}
       {gameOver && <GameOver
         playerName={player.playerName}
         playerLevel={player.playerLevel}

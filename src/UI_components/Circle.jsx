@@ -1,11 +1,11 @@
-function Circle({ clickHandler, id, current }) {
+function Circle({ clickHandler, id, current, clicked }) {
     return (
         <>
-            <div className={`circle ${current ? 'active' : ''}`}
-                onClick={() => { clickHandler(id) }}>
-            </div>
+            <div
+                className={`circle ${current ? 'active' : ''}${clicked ? 'blood' : ''}`}
+                onClick={() => { clickHandler(id) }}></div >
         </>
     );
 }
 
-export default Circle
+export default Circle;

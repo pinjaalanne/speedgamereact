@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import clown from '../assets/clown1.png'
+import clown from '../assets/images/giphy.webp'
 
 function NewGame({ click }) {
 
@@ -12,10 +12,9 @@ function NewGame({ click }) {
     return (
         <>
             <div className="wrap">
-                <h1>Catch the Clown</h1>
-                {/* <img className="mainclown" src={clown} alt="no img"></img> */}
-                <h2>Catch the sad clown and give it some love</h2>
-                <h3>Start by entering your name below</h3>
+                <h1>The Clown Killer</h1>
+                <img className="mainclown" src={clown} alt="no img"></img>
+                <h2>Start by entering your name below</h2>
                 <input className="nameInput" id="name" type="text" placeholder="Enter your name" onChange={inputHandler} />
                 <div>
                     <button className="btn" onClick={() => click('easy', playerName)}>Easy</button>
