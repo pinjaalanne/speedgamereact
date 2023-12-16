@@ -4,6 +4,7 @@ function Game({ score, circles, clickHandler, endGameHandler, current, clicked }
     return (
         <>
             <div className="wrap">
+                <h1>The Clown Killer</h1>
                 <h3 className="score">Clowns killed: {score}</h3>
                 <div>
                     {circles.map((_, i) =>
@@ -15,7 +16,7 @@ function Game({ score, circles, clickHandler, endGameHandler, current, clicked }
                             clicked={i === clicked}
                         />)}
                 </div>
-                <button className="btn" onClick={endGameHandler}>End Game</button>
+                <button className="btn" onClick={endGameHandler}>Please Stop!</button>
             </div>
         </>
     );

@@ -33,8 +33,6 @@ function App() {
 
     setCircles(circleArray)
 
-    console.log('circleArray', circleArray);
-
     setPlayer(
       {
         playerLevel: playerLevel,
@@ -94,7 +92,8 @@ function App() {
 
   return (
     <>
-      {game && <NewGame click={gameSetHandler} />}
+      {game && <NewGame
+        click={gameSetHandler} />}
       {gameStart && <Game
         score={score}
         circles={circles}

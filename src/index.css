@@ -28,12 +28,12 @@ main {
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 4.7rem;
   text-shadow: 4px 4px 2px rgba(195, 54, 54, 0.87);
 }
 
 h2 {
-  font-size: 2.2rem;
+  font-size: 1.7rem;
   text-shadow: 3px 3px 2px rgba(195, 54, 54, 0.87);
 }
 
@@ -43,7 +43,7 @@ h3 {
 }
 
 .wrap {
-  margin: 3rem 0 2rem;
+  margin: 1.5rem 0 2rem;
   display: inline-block;
   justify-content: center;
   align-items: center;
@@ -52,31 +52,6 @@ h3 {
 .mainclown {
   height: 250px;
 }
-
-/* a {
-  text-decoration: none;
-  color: rgb(46, 40, 40);
-  font-size: 0.7rem;
-  margin-top: 0;
-} */
-
-/* img {
-  border-radius: 20px;
-  margin: 30px 0;
-}
-
-img.visible {
-  display: none;
-} */
-
-/* #score.visible {
-  display: inline-block;
-} */
-
-/* 
-.clown-container.visible {
-  display: flex;
-} */
 
 .circle {
   display: inline-block;
@@ -89,7 +64,7 @@ img.visible {
   width: 150px;
   padding: 0.5rem;
   border-radius: 45%;
-  margin: 30px 20px 60px;
+  margin: 50px 20px 80px;
   cursor: url('./assets/images/knife_100x100.png'), pointer;
 }
 
@@ -107,28 +82,13 @@ img.visible {
   background-size: cover;
 }
 
-/* .clowncircle.number {
-  background-image: url(close.webp);
-  background-size: cover;
-  box-shadow: inset 0px 0px 10px 10px rgb(0, 0, 0);
-  transform: scale(5);
-  transition: all 0.2s;
-}
-
-.clowncircle.number.blood {
-  background-image: url(blood.png);
-  box-shadow: none;
-  border-radius: 10px;
-  transition: none;
-} */
-
 .nameInput {
   font-family: inherit;
   color: rgb(155, 11, 11);
   text-shadow: 0.5px 0.5px 0.5px rgb(85, 22, 22);
   font-weight: 500;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   border-radius: 10px;
   padding: 0.5rem;
   width: 200px;
@@ -156,47 +116,26 @@ input:focus {
   cursor: pointer;
   border-style: none;
   font-family: inherit;
-  font-size: 2rem;
+  font-size: 1.7rem;
   border-radius: 15px;
   margin: 10px 20px 20px;
-  padding: 1rem;
+  padding: 1rem 2rem;
 }
 
 .btn:hover {
   background-color: rgb(155, 11, 11, 0.5);
 }
 
+.instBtn {
+  font-size: 1.2rem;
+}
+
 .score {
   margin: 30px 0;
   color: white;
-  font-size: 1.7rem;
+  font-size: 2rem;
   text-shadow: 3px 3px 1px rgba(162, 27, 27, 0.881);
 }
-
-/* stop {
-  display: none;
-}
-
-#stop.visible {
-  display: inline-block;
-}
-
-#play.notvisible {
-  display: none;
-}
-
-#xButton:hover,
-#closeButton:hover {
-  background-color: rgba(220, 198, 198, 0.859);
-}
-
-#instButton.notvisible {
-  display: none;
-}
-
-#instButton:hover {
-  background: rgba(107, 9, 9, 0.705);
-} */
 
 .modal {
   background-color: rgba(0, 0, 0, 0.739);
@@ -209,11 +148,6 @@ input:focus {
   justify-content: center;
   align-items: center;
 }
-
-/* 
-.modal.visible {
-  display: flex;
-} */
 
 .modalContent {
   background-color: rgb(130, 12, 12);
@@ -230,11 +164,12 @@ input:focus {
 
 .result {
   font-size: 1.5rem;
-  margin: 2rem 0 0.5rem;
+  margin: 1.5rem 0 0.5rem;
 }
 
 .modalHeader {
   text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.873);
+  font-size: 3rem;
 }
 
 .closeBtn {
@@ -254,62 +189,12 @@ input:focus {
   background-color: rgba(220, 198, 198, 0.859);
 }
 
+.instHeader {
+  font-size: 1.8rem;
+  margin: 1rem;
+}
 
-
-/* #modaltext {
+.instText {
   font-size: 1.5rem;
-  text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.873);
+  margin: 0.6rem;
 }
-
-#modalscore {
-  border: dotted 7px rgb(255, 255, 255, 0.6);
-  border-radius: 30px;
-  padding: 1rem;
-  font-size: 1.5rem;
-  margin: 30px 130px;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.873);
-}
-
-.instmodal {
-  background-color: rgba(0, 0, 0, 0.739);
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-
-.instmodal.visible {
-  display: flex;
-}
-
-.instmodalcontent {
-  background-color: rgb(130, 12, 12);
-  color: white;
-  border: 10px dotted rgb(248, 247, 247, 0.7);
-  box-shadow: inset 5px 5px 10px rgba(143, 67, 67, 0.893), 5px 5px 3px rgba(101, 36, 36, 0.86);
-  margin: 3rem;
-  padding: 5rem;
-  border-radius: 50px;
-  max-width: 700px;
-  position: relative;
-}
-
-ul {
-  color: white;
-  text-shadow: 3px 3px 1px rgba(0, 0, 0, 0.873);
-}
-
-ul lh {
-  font-size: 2rem;
-  line-height: 4rem;
-}
-
-ul li {
-  font-size: 1.5rem;
-  list-style-type: none;
-  line-height: 3rem;
-} */
