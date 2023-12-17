@@ -1,6 +1,6 @@
 import Circle from "../UI_components/Circle";
 
-function Game({ score, circles, clickHandler, endGameHandler, current, clicked }) {
+function Game({ score, circles, clickHandler, endGameHandler, current, setClicked }) {
     return (
         <>
             <div className="wrap">
@@ -13,7 +13,7 @@ function Game({ score, circles, clickHandler, endGameHandler, current, clicked }
                             id={i}
                             clickHandler={clickHandler}
                             current={current === i}
-                            clicked={i === clicked}
+                            setClicked={setClicked}
                         />)}
                 </div>
                 <button className="btn" onClick={endGameHandler}>Please Stop!</button>

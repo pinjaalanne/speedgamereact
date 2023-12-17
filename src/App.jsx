@@ -65,7 +65,6 @@ function App() {
       endGameHandler()
       return
     }
-    setClicked(true);
     setScore(score + 1);
     rounds.current--;
   }
@@ -100,7 +99,8 @@ function App() {
         clickHandler={clickHandler}
         endGameHandler={endGameHandler}
         current={current}
-        clicked={clicked} />}
+        clicked={clicked}
+        setClicked={setClicked} />}
       {gameOver && <GameOver
         playerName={player.playerName}
         playerLevel={player.playerLevel}
