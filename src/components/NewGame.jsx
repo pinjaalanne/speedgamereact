@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Instructions from "./Instructions";
-import clown from '../assets/images/giphy.webp'
+import clown from "../assets/images/giphy.webp"
 
 function NewGame({ click }) {
 
     const [playerName, setPlayerName] = useState('')
     const [modal, setModal] = useState(false)
 
+    // function for setting the player
     const inputHandler = (e) => {
         setPlayerName(e.target.value)
     }
@@ -23,11 +24,11 @@ function NewGame({ click }) {
                     {modal ? <Instructions setModal={setModal} /> : null}
                 </div>
                 <div>
-                    <button className="btn" onClick={() => click('easy', playerName)}>Easy</button>
+                    <button className="btn" onClick={() => { click('easy', playerName) }}>Easy</button>
                     <button className="btn" onClick={() => click('medium', playerName)}>Medium</button>
                     <button className="btn" onClick={() => click('hard', playerName)}>Hard</button>
                 </div>
-            </div>
+            </div >
         </>
     );
 }
