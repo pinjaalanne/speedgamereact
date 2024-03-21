@@ -40,12 +40,12 @@ Clown Killer is a simple speed game built with React using Vite. The objective o
 
 2. **Clone the Repository:**
     ```bash
-    git clone https://github.com/your-username/clown-killer.git
+    git clone https://github.com/pinjaalanne/speedgamereact.git
     ```
 
 3. **Install Dependencies:**
     ```bash
-    cd clown-killer
+    cd speedgamereact
     npm install
     ```
 
